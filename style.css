@@ -14,3 +14,8 @@ Lincense:   GNU General Public License v2 or later
 
     content: "\f18a";
 }
+
+.widget_archive select {
+  padding: 0.5em;
+  width: 100%;
+}
