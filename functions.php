@@ -8,8 +8,8 @@ function theme_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
-function theme_add_custom_table_class( $content ) {
+function theme_add_prettify_pre_class( $content ) {
     return str_replace( '<pre>', '<pre class="prettyprint linenums">', $content );
 }
-add_filter( 'the_content', 'eden_add_custom_table_class' );
+add_filter( 'the_content', 'theme_add_prettify_pre_class' );
 ?>
