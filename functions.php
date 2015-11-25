@@ -9,7 +9,7 @@ function theme_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
 function theme_add_prettify_pre_class( $content ) {
-    return str_replace( '<pre>', '<pre class="prettyprint linenums">', $content );
+    return str_replace( '<pre>', '<pre class="prettyprint">', $content );
 }
 add_filter( 'the_content', 'theme_add_prettify_pre_class' );
 ?>

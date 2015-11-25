@@ -20,6 +20,7 @@ Lincense:   GNU General Public License v2 or later
     width: 100%;
 }
 
-.prettyprint ol.linenums > li {
-    list-style-type: decimal;
+
+body.tag {
+    color: #000;
 }
