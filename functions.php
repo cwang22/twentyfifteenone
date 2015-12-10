@@ -12,4 +12,16 @@ function theme_add_prettify_pre_class( $content ) {
     return str_replace( '<pre>', '<pre class="prettyprint">', $content );
 }
 add_filter( 'the_content', 'theme_add_prettify_pre_class' );
+
+function spolier_shortcode( $atts, $content = null ) {
+	$atts = shortcode_atts(
+		array(
+			'title' => 'spolier',
+			'href' => 'spoiler',
+		), $atts, 'spolier' );
+
+	return '<a data-toggle="collapse" href="#'.$atts['href'].'" aria-expanded="true" aria-controls="'.$atts['href'].'">'.__($atts['title'],'eden').'</a>
+			<div class="collapse" id="'.$atts['href'].'" aria-expanded="true">'.$content.'</div>';
+}
+add_shortcode( 'spolier', 'spolier_shortcode' );
 ?>
