@@ -17,11 +17,10 @@ function spolier_shortcode( $atts, $content = null ) {
 	$atts = shortcode_atts(
 		array(
 			'title' => 'spolier',
-			'href' => 'spoiler',
 		), $atts, 'spolier' );
-
-	return '<a data-toggle="collapse" href="#'.$atts['href'].'" aria-expanded="true" aria-controls="'.$atts['href'].'">'.__($atts['title'],'eden').'</a>
-			<div class="collapse" id="'.$atts['href'].'" aria-expanded="true">'.$content.'</div>';
+    $href ="spolier-".substr(md5($content), 0, 8);
+	return '<p><a data-toggle="collapse" href="#'.$href.'" aria-expanded="true" aria-controls="'.$href.'">'.__($atts['title'],'twentyfifteenone').'</a></p>
+			<div class="collapse spoler" id="'.$href.'" aria-expanded="true">'.$content.'</div>';
 }
 add_shortcode( 'spolier', 'spolier_shortcode' );
 ?>
