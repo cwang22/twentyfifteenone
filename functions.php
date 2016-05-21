@@ -9,6 +9,20 @@ function one_enqueue_styles() {
 
 add_action( 'wp_enqueue_scripts', 'one_enqueue_styles' );
 
+function ds_enqueue_jquery_in_footer( &$scripts ) {
+    if ( ! is_admin() ) {
+		$scripts->registered['jquery']->args = 1;
+		$scripts->registered['jquery-core']->args = 1;
+		$scripts->registered['jquery-migrate']->args = 1;
+	}
+}
+add_action( 'wp_default_scripts', 'ds_enqueue_jquery_in_footer', 11 );
+function enqueue_jquery_in_footer() {
+	wp_enqueue_script( 'jquery-core' );
+	wp_enqueue_script( 'jquery-migrate' );
+}
+add_action( 'init', 'enqueue_jquery_in_footer' );
+
 function one_add_prettify_pre_class( $content ) {
 	return str_replace( '<pre>', '<pre class="prettyprint">', $content );
 }
