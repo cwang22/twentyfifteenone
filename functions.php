@@ -27,4 +27,3 @@ function one_spoiler_shortcode( $atts, $content = null ) {
 }
 
 add_shortcode( 'spoiler', 'one_spoiler_shortcode' );
-?>
