@@ -13,14 +13,14 @@ function theme_add_prettify_pre_class( $content ) {
 }
 add_filter( 'the_content', 'theme_add_prettify_pre_class' );
 
-function spolier_shortcode( $atts, $content = null ) {
+function spoiler_shortcode( $atts, $content = null ) {
 	$atts = shortcode_atts(
 		array(
-			'title' => 'spolier',
-		), $atts, 'spolier' );
-    $href ="spolier-".substr(md5($content), 0, 8);
+			'title' => 'spoiler',
+		), $atts, 'spoiler' );
+    $href ="spoiler-".substr(md5($content), 0, 8);
 	return '<p><a data-toggle="collapse" href="#'.$href.'" aria-expanded="true" aria-controls="'.$href.'">'.__($atts['title'],'twentyfifteenone').'</a></p>
-			<div class="collapse spoler" id="'.$href.'" aria-expanded="true">'.$content.'</div>';
+			<div class="collapse spoiler" id="'.$href.'" aria-expanded="true">'.$content.'</div>';
 }
-add_shortcode( 'spolier', 'spolier_shortcode' );
+add_shortcode( 'spoiler', 'spoiler_shortcode' );
 ?>
