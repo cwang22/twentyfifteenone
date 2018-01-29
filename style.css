@@ -6,21 +6,25 @@ Template:   twentyfifteen
 Lincense:   GNU General Public License v2 or later
 */
 .entry-content p {
-    text-align: justify;
+  text-align: justify;
 }
 
-.social-navigation a[href*="weibo.com"]:before {
-    font-family: "FontAwesome";
+.social-navigation a[href*='weibo.com']:before {
+  font-family: 'FontAwesome';
 
-    content: "\f18a";
+  content: '\f18a';
 }
 
 .widget_archive select {
-    padding: .5em;
-    width: 100%;
+  padding: 0.5em;
+  width: 100%;
 }
 
-
 body.tag {
-    color: #000;
+  color: #000;
+}
+
+.hljs {
+  border: none;
+  line-height: 1;
 }

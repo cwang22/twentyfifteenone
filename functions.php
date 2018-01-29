@@ -1,43 +1,41 @@
 <?php
-function one_enqueue_styles() {
-	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
-	wp_enqueue_style( 'bootstrap-collapse', get_stylesheet_directory_uri() . '/css/bootstrap.css' );
-	wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', array(), '4.0.3' );
-	wp_enqueue_script( 'run_prettify-js', '//cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js', array(), '20160518', true );
-	wp_enqueue_script( 'bootstrap-js', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js', array( 'jquery' ), '3.3.4', true );
+function one_enqueue_styles()
+{
+	wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+	wp_enqueue_style('bootstrap-collapse', get_stylesheet_directory_uri() . '/css/bootstrap.css');
+	wp_enqueue_style('bootstrap-collapse', get_stylesheet_directory_uri() . '/css/bootstrap.css');
+	wp_enqueue_style('font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', [], '4.0.3');
+	wp_enqueue_style('highlight-css', '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css', [], '9.12.0');
+	wp_enqueue_style('highlight-css-atom-one-dark', '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css', ['highlight-css'], '9.12.0');
+	wp_enqueue_script('bootstrap-js', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js', ['jquery'], '3.3.4', true);
+	wp_enqueue_script('highlight-js', '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js', [], '9.12.0', true);
+	wp_enqueue_script('script', get_stylesheet_directory_uri() . '/js/script.js', ['highlight-js'], '1.0.0', true);
 }
+add_action('wp_enqueue_scripts', 'one_enqueue_styles');
 
-add_action( 'wp_enqueue_scripts', 'one_enqueue_styles' );
-
-function ds_enqueue_jquery_in_footer( &$scripts ) {
-    if ( ! is_admin() ) {
-		$scripts->registered['jquery']->args = 1;
-		$scripts->registered['jquery-core']->args = 1;
-		$scripts->registered['jquery-migrate']->args = 1;
-	}
+function one_enqueue_jquery_in_footer(&$scripts)
+{
+	if (is_admin()) return;
+	$scripts->registered['jquery']->args = 1;
+	$scripts->registered['jquery-core']->args = 1;
+	$scripts->registered['jquery-migrate']->args = 1;
 }
-add_action( 'wp_default_scripts', 'ds_enqueue_jquery_in_footer', 11 );
-function enqueue_jquery_in_footer() {
-	wp_enqueue_script( 'jquery-core' );
-	wp_enqueue_script( 'jquery-migrate' );
-}
-add_action( 'init', 'enqueue_jquery_in_footer' );
+add_action('wp_default_scripts', 'one_enqueue_jquery_in_footer', 11);
 
-function one_add_prettify_pre_class( $content ) {
-	return str_replace( '<pre>', '<pre class="prettyprint">', $content );
-}
 
-add_filter( 'the_content', 'one_add_prettify_pre_class' );
-
-function one_spoiler_shortcode( $atts, $content = null ) {
+function one_spoiler_shortcode($atts, $content = null)
+{
 	$atts = shortcode_atts(
-		array(
-			'title' => 'spoiler',
-		), $atts, 'spoiler' );
-	$href = "spoiler-" . substr( md5( $content ), 0, 8 );
+		['title' => 'spoiler'],
+		$atts,
+		'spoiler'
+	);
 
-	return '<p><a data-toggle="collapse" href="#' . $href . '" aria-expanded="true" aria-controls="' . $href . '">' . __( $atts['title'], 'twentyfifteenone' ) . '</a></p>
-			<div class="collapse spoiler" id="' . $href . '" aria-expanded="true">' . $content . '</div>';
+	$href = "spoiler-" . substr(md5($content), 0, 8);
+	$title = __($atts['title'], 'twentyfifteenone');
+	return <<<EOD
+	<p><a data-toggle="collapse" href="#{$href}" aria-expanded="true" aria-controls="{$href}">{$title}</a></p>
+	<div class="collapse spoiler" id="{$href}" aria-expanded="true">{$content}</div>
+EOD;
 }
-
-add_shortcode( 'spoiler', 'one_spoiler_shortcode' );
+add_shortcode('spoiler', 'one_spoiler_shortcode');
