@@ -5,10 +5,6 @@ Author URI: https://seewang.me
 Template:   twentyfifteen
 Lincense:   GNU General Public License v2 or later
 */
-.entry-content p {
-    text-align: justify;
-}
-
 .social-navigation a[href*='weibo.com']:before {
     font-family: 'FontAwesome';
     content: '\f18a';
