@@ -31,7 +31,7 @@ Lincense:   GNU General Public License v2 or later
 
 #colophon .site-info a{
     color: #000;
-    text-decoration: underline;
+    border-bottom: 1px solid #333;
 }
 
 /**
