@@ -1,18 +1,27 @@
 /*
 Theme Name: Twenty Fifteen One
-Author:     CyanWave
+Author:     Chenggang Wang
 Author URI: https://seewang.me
 Template:   twentyfifteen
 Lincense:   GNU General Public License v2 or later
 */
 .social-navigation a[href*='weibo.com']:before {
-    font-family: 'FontAwesome';
+    font-family: "Font Awesome 5 Brands";
     content: '\f18a';
 }
 
-.widget_archive select {
-    padding: 0.5em;
-    width: 100%;
+.social-navigation a[href*='steamcommunity.com']:before {
+    font-family: "Font Awesome 5 Brands";
+    content: '\f1b6';
+}
+
+.search-field {
+    background-color: #fff;
+    border-width: 0 0 1px 0;
+}
+
+.search-field:focus {
+    border-width: 0 0 1px 0;
 }
 
 body.tag {
