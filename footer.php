@@ -10,7 +10,7 @@
              */
             do_action( 'twentyfifteen_credits' );
             ?>
-            &copy; seewang <?php echo date( 'Y' ); ?>
+            Copyright &copy; <?php echo date( 'Y' ); ?> Chenggang Wang | Hosted on <a href="https://m.do.co/c/50614500d0db" target="_blank">Digital Ocean</a>
         </div><!-- .site-info -->
     </footer><!-- .site-footer -->
 
