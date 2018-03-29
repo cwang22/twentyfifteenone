@@ -1,9 +1,9 @@
 /*
 Theme Name: Twenty Fifteen One
-Author:     Chenggang Wang
+Author: Chenggang Wang
 Author URI: https://seewang.me
-Template:   twentyfifteen
-Lincense:   GNU General Public License v2 or later
+Template: twentyfifteen
+License GNU General Public License v2 or later
 */
 .social-navigation a[href*='weibo.com']:before {
     font-family: "Font Awesome 5 Brands";
@@ -32,6 +32,11 @@ Lincense:   GNU General Public License v2 or later
 #colophon .site-info a{
     color: #000;
     border-bottom: 1px solid #333;
+}
+
+.entry-content img {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
 }
 
 /**
