@@ -85,3 +85,10 @@ Algolia
     font-style: normal;
     border-radius: 2px;
 }
+/**
+Disqus
+*/
+#disqus_thread {
+    margin: 0 8.3333%;
+    padding-top: 8.3333%;
+}
