@@ -85,7 +85,7 @@
                     },
                     transformData: {
                         item: function (hit) {
-                            for (var key in hit._highlightResult) {
+                            for (key in hit._highlightResult) {
                                 // We do not deal with arrays.
                                 if (typeof hit._highlightResult[key].value !== 'string') {
                                     continue
@@ -94,7 +94,7 @@
                                 hit._highlightResult[key].value = hit._highlightResult[key].value.replace(/__ais-highlight__/g, '<em>').replace(/__\/ais-highlight__/g, '</em>')
                             }
 
-                            for (var key in hit._snippetResult) {
+                            for (key in hit._snippetResult) {
                                 // We do not deal with arrays.
                                 if (typeof hit._snippetResult[key].value !== 'string') {
                                     continue
