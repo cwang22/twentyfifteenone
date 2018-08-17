@@ -8,6 +8,6 @@ jQuery(document).ready(function () {
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
-        navigator.serviceWorker.register('./sw.js')
+        navigator.serviceWorker.register('/wp-content/themes/twentyfifteenone/js/sw.js')
     })
 }
