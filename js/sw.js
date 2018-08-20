@@ -1,7 +1,7 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.4.1/workbox-sw.js')
 
 workbox.routing.registerRoute(
-    /\/(en|zh)\//,
+    /\/(en|zh)\/$/,
     workbox.strategies.staleWhileRevalidate({
         cacheName: 'home-cache',
         plugins: [new workbox.expiration.Plugin({
