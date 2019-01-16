@@ -5,6 +5,10 @@ Author URI: https://seewang.me
 Template: twentyfifteen
 License GNU General Public License v2 or later
 */
+body {
+    font-family: "Noto Serif SC", "Noto Serif", serif;
+}
+
 .social-navigation a[href*='weibo.com']:before {
     font-family: "Font Awesome 5 Brands";
     content: '\f18a';
@@ -29,7 +33,7 @@ License GNU General Public License v2 or later
     text-align: center;
 }
 
-#colophon .site-info a{
+#colophon .site-info a {
     color: #000;
     border-bottom: 1px solid #333;
 }
@@ -85,6 +89,7 @@ Algolia
     font-style: normal;
     border-radius: 2px;
 }
+
 /**
 Disqus
 */
