@@ -87,7 +87,7 @@
                         item: function (hit) {
                             for (key in hit._highlightResult) {
                                 // We do not deal with arrays.
-                                if (typeof hit._highlightResult[key].value !== 'string') {
+                                if (!hit._highlightResult.hasOwnProperty(key) || typeof hit._highlightResult[key].value !== 'string') {
                                     continue
                                 }
                                 hit._highlightResult[key].value = _.escape(hit._highlightResult[key].value)
@@ -96,7 +96,7 @@
 
                             for (key in hit._snippetResult) {
                                 // We do not deal with arrays.
-                                if (typeof hit._snippetResult[key].value !== 'string') {
+                                if (!hit._snippetResult.hasOwnProperty(key) || typeof hit._snippetResult[key].value !== 'string') {
                                     continue
                                 }
 

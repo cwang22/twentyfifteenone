@@ -10,12 +10,12 @@ body {
 }
 
 .social-navigation a[href*='weibo.com']:before {
-    font-family: "Font Awesome 5 Brands";
+    font-family: "Font Awesome 5 Brands", serif;
     content: '\f18a';
 }
 
 .social-navigation a[href*='steamcommunity.com']:before {
-    font-family: "Font Awesome 5 Brands";
+    font-family: "Font Awesome 5 Brands", serif;
     content: '\f1b6';
 }
 
@@ -41,6 +41,24 @@ body {
 .entry-content img {
     border: 1px solid rgba(0, 0, 0, 0.15);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.spoiler {
+    margin-bottom: 1.6em;
+}
+
+.spoiler .title {
+    cursor: pointer;
+    text-decoration: underline;
+    margin-bottom: .8em;
+}
+
+.spoiler .content {
+    display: none;
+}
+
+.spoiler .content > :last-child {
+    margin-bottom: 0;
 }
 
 /**

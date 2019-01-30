@@ -10,7 +10,7 @@
              */
             do_action( 'twentyfifteen_credits' );
             ?>
-            Copyright &copy; <?php echo date( 'Y' ); ?> Chenggang Wang | Hosted on <a href="https://m.do.co/c/50614500d0db" target="_blank">Digital Ocean</a>
+            Copyright &copy; <?php echo date( 'Y' ); ?> Chenggang Wang | Hosted on <a href="https://m.do.co/c/50614500d0db" target="_blank" rel="noopener">Digital Ocean</a>
         </div><!-- .site-info -->
     </footer><!-- .site-footer -->
 
