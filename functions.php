@@ -3,11 +3,8 @@ function one_enqueue_styles() {
 	wp_enqueue_style( 'google-font', '//fonts.googleapis.com/css?family=Noto+Serif+SC' );
 	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 	wp_enqueue_style( 'font-awesome', '//use.fontawesome.com/releases/v5.0.8/css/all.css', [], '5.0.8' );
-	wp_enqueue_style( 'highlight-css', '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css', [],
-		'9.12.0' );
-	wp_enqueue_style( 'highlight-css-atom-one-dark',
-		'//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css', [ 'highlight-css' ],
-		'9.12.0' );
+	wp_enqueue_style( 'highlight-css', get_stylesheet_directory_uri() . '/css/highlight.css', [],'20190306' );
+
 	wp_enqueue_script( 'highlight-js', '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js', [],
 		'9.12.0', true );
 	wp_enqueue_script( 'medium-zoom', '//unpkg.com/medium-zoom@0.4.0/dist/medium-zoom.min.js', [], '0.4.0', true );
